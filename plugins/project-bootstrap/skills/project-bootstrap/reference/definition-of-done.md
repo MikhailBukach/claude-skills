@@ -35,6 +35,17 @@ Before moving work from "In progress" to "Done" in `PROJECT_STATE.md`:
    assumption that got validated or broken during the stage is updated (not silently left stale) in the
    assumptions & risks register.
 
+## On a team, two more gates
+
+For a multi-contributor project the checklist above is necessary but not sufficient — "done" also means the
+change is safely mergeable by others' standards, not just yours:
+
+7. **CI is green on the PR.** Local "tests pass" is fast feedback, not the gate. The merge gate is the CI
+   run — because that's the environment everyone shares, and "green on my machine" has burned every team
+   that trusted it.
+8. **The PR is approved,** with reviewers from `CODEOWNERS` for the areas touched and no unresolved review
+   comments. A decision made in the PR that qualifies becomes an ADR (`Proposed` → `Accepted` on merge).
+
 ## Why "state the actual result" matters
 
 The temptation is to write "should be fine" or "tests pass" from memory. But the whole point of the gate

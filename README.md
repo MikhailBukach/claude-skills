@@ -16,6 +16,8 @@ and resumable across sessions — instead of re-explaining your conventions ever
 - Three routines: **KICKOFF** (new project), **ADOPT** (retrofit an existing undocumented repo from its
   code + git history), and **RESUME/DONE** (read state on start, close stages cleanly).
 - A **plan-before-execute** habit and clear triggers for when a decision earns an ADR.
+- A **team overlay** — `CONTRIBUTING.md`, `CODEOWNERS`, a branch/PR/review workflow, CI-green + approval
+  DoD gates, and conflict-safe living docs — applied automatically for multi-contributor projects.
 
 ## Install
 

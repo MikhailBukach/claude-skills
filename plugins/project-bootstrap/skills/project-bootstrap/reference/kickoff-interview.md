@@ -20,7 +20,8 @@ Keep it to 4-6 questions, ideally batched into one `AskUserQuestion` call:
 1. **Product / problem** — what is this and what does it do? (If unclear from context.)
 2. **Components & stack** — one service or several? What language/framework each?
 3. **Solo or team?** — drives how formal branches and commits should be. Solo → don't over-engineer
-   branch conventions.
+   branch conventions. Team → apply the Team mode overlay (`team-mode.md`): scaffold `CONTRIBUTING.md` +
+   `CODEOWNERS`, branch/PR/review workflow instead of commit-to-main.
 4. **Hard constraints** — budget, hardware ceilings, licensing (e.g. AGPL/GPL that affects distribution),
    deadlines.
 5. **Horizon** — throwaway prototype, MVP, or long-lived product? This is the most important one because

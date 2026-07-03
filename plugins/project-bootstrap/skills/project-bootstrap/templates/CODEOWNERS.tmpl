@@ -1,0 +1,17 @@
+# CODEOWNERS — who must review changes to each area.
+# Syntax: <path-pattern>  <@owner> [<@owner> ...]
+# Later matches win. Owners are auto-requested as reviewers on matching PRs.
+# Place this file at repo root, .github/, or docs/ (host-dependent — GitHub reads all three).
+
+# Fallback owner for everything not matched below
+*                       {{@DEFAULT_OWNER}}
+
+# Per-component owners — mirror your directory layout
+{{/component-a/}}       {{@owner-a}}
+{{/component-b/}}       {{@owner-b}}
+
+# The project's self-description — changes here should get a deliberate look
+/PROJECT_STATE.md       {{@maintainers}}
+/ROADMAP.md             {{@maintainers}}
+/docs/decisions/        {{@maintainers}}
+/docs/conventions.md    {{@maintainers}}

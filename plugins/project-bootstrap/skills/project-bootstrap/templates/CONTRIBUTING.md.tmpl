@@ -1,0 +1,50 @@
+# Contributing to {{PROJECT_NAME}}
+
+This is the human-facing onboarding guide (the machine-facing one is `CLAUDE.md`). If you're new here,
+read this top to bottom once; after that it's a reference.
+
+## Setup
+
+```bash
+{{CLONE_AND_SETUP_COMMANDS}}
+```
+
+Verify your environment is working:
+
+```bash
+{{VERIFY_COMMAND}}   # e.g. make test — should pass before you change anything
+```
+
+## How we work
+
+- **Read [PROJECT_STATE.md](PROJECT_STATE.md) first** — current stage, in-progress work, open questions.
+- **Plan before nontrivial code.** New modules, schema changes, anything spanning components → agree the
+  approach (an issue or a short design note) before writing a lot of code.
+- **One unit of work = one branch = one PR.** Keep PRs small enough to review in one sitting.
+
+## Branch & PR workflow
+
+- Branch off `{{DEFAULT_BRANCH}}`: `{{BRANCH_PATTERN}}` (e.g. `feat/decision-evaluator`). **No direct
+  commits to `{{DEFAULT_BRANCH}}`.**
+- [Conventional Commits](docs/conventions.md) for messages.
+- Open a PR; link the issue it closes. CI must be green.
+- At least **{{N_REVIEWERS}}** approving review(s), and reviewers from [CODEOWNERS](CODEOWNERS) for the
+  areas you touched. Resolve all review threads before merge.
+- {{MERGE_STRATEGY}} (e.g. squash-merge) into `{{DEFAULT_BRANCH}}`.
+
+## Definition of Done
+
+A change is done when: CI is green on the PR, it's approved, no unresolved comments, and — if it finished a
+stage — `PROJECT_STATE.md` is updated and any decision is recorded as an ADR. See
+[docs/definition-of-done.md](docs/definition-of-done.md) if present.
+
+## Decisions
+
+Significant, hard-to-reverse, or cross-component choices get an ADR in `docs/decisions/`. Open it as
+`Status: Proposed` in your PR so the team can weigh in; it flips to `Accepted` when the PR merges. Small
+cross-cutting rules go in `docs/conventions.md` instead.
+
+## Getting help
+
+- Unfamiliar term? [docs/glossary.md](docs/glossary.md).
+- {{TEAM_CHANNEL}} for questions.

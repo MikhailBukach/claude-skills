@@ -36,6 +36,8 @@ everything you generate — don't impose English on a Russian-documented repo.
 | `docs/research/*.md` | Dated investigation notes (hypothesis → what was tried → conclusion). | One per nontrivial investigation. |
 | `docs/glossary.md` | Domain terms → one-line definitions, so meaning doesn't drift. | Add a row when a stage introduces a term. |
 | `docs/risks.md` *(or a PROJECT_STATE section)* | Assumptions & risks — the load-bearing bets the plan stands on. | Update when a bet is added, validated, or broken. |
+| `CONTRIBUTING.md` *(team)* | Human-facing onboarding: setup, branch/PR/review workflow, DoD. | Written at kickoff for a team; edited as process changes. |
+| `CODEOWNERS` *(team)* | Who must review changes to each area. | Written at kickoff for a team; edited as ownership shifts. |
 
 Templates for each live in `templates/` next to this file. Read the relevant template before generating a
 document — they encode the exact structure that makes these files useful, not decorative.
@@ -68,6 +70,9 @@ can't infer from the conversation or a quick look at the directory.
    - `docs/glossary.md` from `templates/glossary.md.tmpl` — only if the project has real domain jargon
      (most do); skip for a plain CRUD app with no coined terms.
    - `.env.example` committed, `.env` in `.gitignore`, secrets as `rotate-me` placeholders.
+   - **If the answer was "team":** also apply the Team mode overlay — scaffold `CONTRIBUTING.md`
+     (`templates/CONTRIBUTING.md.tmpl`) and `CODEOWNERS` (`templates/CODEOWNERS.tmpl`), and use the
+     branch/PR conventions instead of commit-to-main. See the Team mode section below.
 
 3. **Offer** `git init` + a first `chore: scaffold project skeleton` commit — only with confirmation, per
    the git rules in `CLAUDE.md`. Never commit unasked.
@@ -159,6 +164,27 @@ session (yours or a teammate's) can trust the state file completely.
   drop a dated note in `docs/research/` from `templates/research-note.md.tmpl` so the reasoning survives.
   This is what keeps hard-won findings from evaporating between sessions.
 
+## Team mode (overlay)
+
+The base system assumes a solo developer — one writer, one "current stage," commits to main. With two or
+more contributors that model breaks, so apply this overlay when the project is a team (KICKOFF answer, or
+an ADOPTed repo with multiple committers). It changes only what must change:
+
+- **Living docs survive concurrency.** `PROJECT_STATE.md` is written by one owner at stage boundaries, not
+  by everyone continuously (that's the merge-conflict engine); append at the end of sections, never rewrite
+  a teammate's entry. Claim ADR numbers when the PR opens so two branches don't both grab `0015`.
+- **Branch → PR → review, never commit to main.** CI-green (not "passed on my machine") is the merge gate;
+  reviews route via `CODEOWNERS`. The git rules in `CLAUDE.md` shift from "commit to main when asked" to
+  "open a PR."
+- **Work keys off the issue tracker,** not one global banner: RESUME orients off the assigned issue /
+  current branch; PROJECT_STATE Open questions reference issue IDs rather than being the shared backlog.
+- **DoD gains two gates** — CI green on the PR, and an approving review with no unresolved comments.
+- **Onboard humans with `CONTRIBUTING.md`** (distinct from `CLAUDE.md`, which is for the agent); decisions
+  flow through review as ADRs `Proposed` → `Accepted`.
+
+Scale the ceremony to team size — don't bureaucratize a two-person project. Read `reference/team-mode.md`
+for the full overlay.
+
 ## Why this exists
 
 Every one of these routines exists to make work **resumable and trustworthy**. A project accrues context
@@ -173,3 +199,4 @@ so prune and update rather than hoard.
 - `reference/decision-triggers.md` — when a decision earns an ADR vs. a conventions line.
 - `reference/definition-of-done.md` — the stage-close checklist in full.
 - `reference/session-protocol.md` — the exact read-on-start / write-on-close steps.
+- `reference/team-mode.md` — the multi-contributor overlay (branch/PR/review, concurrent docs, CI gates).

@@ -33,6 +33,16 @@ and is industry-standard so onboarding cost is near zero.
 {{BRANCH_CONVENTION}}
 <!-- Solo phase: often not formalized. Team phase: `<type>/<short-slug>`, e.g. feat/decision-evaluator. -->
 
+## Pull requests & review (team)
+
+<!-- Delete this section for a solo project. -->
+
+- Branch off `{{DEFAULT_BRANCH}}`; **no direct commits to it**. One unit of work = one branch = one PR.
+- PRs must be **CI-green** and have **{{N_REVIEWERS}}** approving review(s); reviewers auto-route via
+  `CODEOWNERS`. Resolve all threads before merge.
+- Merge strategy: {{MERGE_STRATEGY}} (e.g. squash). Link the issue the PR closes.
+- ADRs open as `Status: Proposed` in the PR and flip to `Accepted` on merge.
+
 ## File naming
 
 - {{LANGUAGE}}: {{NAMING_RULE}}
