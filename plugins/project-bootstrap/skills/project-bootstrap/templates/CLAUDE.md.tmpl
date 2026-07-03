@@ -1,0 +1,55 @@
+# {{PROJECT_NAME}}
+
+{{ONE_LINE_DESCRIPTION}}
+
+## Start-of-session protocol
+
+Before doing substantive work, read these so you're not operating from stale assumptions:
+
+1. **[PROJECT_STATE.md](PROJECT_STATE.md)** — the current stage, what's in progress, open questions.
+2. **[ROADMAP.md](ROADMAP.md)** — where this is all going.
+3. **[docs/conventions.md](docs/conventions.md)** — commit, naming, and branch rules.
+
+Then skim `git log` since the state file's "Last updated" and propose the next step.
+
+## Working agreement
+
+- **Plan before nontrivial code.** New modules, schema changes, or anything spanning multiple files get a
+  numbered plan and approval first. One-line fixes don't.
+- **Close stages cleanly.** A stage is done only when tests are green, the linter is clean, and
+  `PROJECT_STATE.md` is updated (Done / Open questions / Last updated). See
+  [docs/definition-of-done](docs/) if present.
+- **Record decisions.** Hard-to-reverse or contested choices become an ADR in `docs/decisions/`; small
+  cross-cutting rules go in `docs/conventions.md`.
+- **Log research.** Nonobvious findings (bug root causes, spikes, perf results) get a dated note in
+  `docs/research/`.
+
+## Git rules
+
+- **Commit only when asked.** Don't commit or push unprompted.
+- **Branch off {{DEFAULT_BRANCH}}** for new work; don't commit directly to it.
+- **Conventional Commits** — `<type>(<scope>): <imperative summary>`. See `docs/conventions.md`.
+- {{COAUTHOR_LINE}}
+
+## Commands
+
+<!-- Fill in the real commands for this project. Delete rows that don't apply. -->
+
+| Task | Command |
+|---|---|
+| Install deps | `{{INSTALL_CMD}}` |
+| Build | `{{BUILD_CMD}}` |
+| Run / dev server | `{{RUN_CMD}}` |
+| Test | `{{TEST_CMD}}` |
+| Lint / format | `{{LINT_CMD}}` |
+
+## Stack
+
+<!-- One line per component: language, framework, key services. Keep in sync with PROJECT_STATE's stack snapshot. -->
+
+- {{COMPONENT}} — {{STACK_NOTE}}
+
+## Secrets & env
+
+- `.env.example` is committed with placeholder values; real `.env` is gitignored.
+- Never commit secrets. Placeholder secrets read `rotate-me` so a real one is never mistaken for a dummy.

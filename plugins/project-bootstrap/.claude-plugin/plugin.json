@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "project-bootstrap",
+  "displayName": "Project Bootstrap",
+  "version": "1.0.0",
+  "description": "Establishes and maintains a lightweight project-discipline system — CLAUDE.md anchor, PROJECT_STATE, ROADMAP, ADRs, conventions, research log, glossary, and a risks register — with kickoff, adopt, and resume routines and a plan-before-execute habit.",
+  "author": {
+    "name": "Mikhail Bukach",
+    "email": "bukach.mikhail@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["project-setup", "documentation", "adr", "conventions", "workflow"]
+}

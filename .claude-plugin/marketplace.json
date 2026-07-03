@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "claude-skills",
+  "owner": {
+    "name": "Mikhail Bukach",
+    "email": "bukach.mikhail@gmail.com"
+  },
+  "description": "Shared Claude Code skills. Currently: project-bootstrap — starts and maintains a project-discipline system (CLAUDE.md, PROJECT_STATE, ADRs, conventions, glossary, risks).",
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "project-bootstrap",
+      "source": "project-bootstrap",
+      "description": "Kickoff, adopt, and resume routines that keep software work documented, reversible, and resumable across sessions.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mikhail Bukach",
+        "email": "bukach.mikhail@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": ["project-setup", "documentation", "adr", "conventions", "workflow"]
+    }
+  ]
+}

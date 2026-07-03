@@ -1,0 +1,45 @@
+# Repo conventions
+
+Living document for cross-cutting conventions that aren't worth a full ADR. When a decision is big or
+hard to reverse, write an ADR in `docs/decisions/` instead and link it here.
+
+## Commit messages — Conventional Commits
+
+Format: `<type>(<optional scope>): <imperative summary>` with an optional body and footer.
+
+| Type | When |
+|---|---|
+| `feat` | New user- or developer-facing capability. |
+| `fix` | Bug fix. |
+| `refactor` | Restructuring with no behavior change. |
+| `perf` | Performance improvement. |
+| `test` | Tests only. |
+| `docs` | Documentation only (README, ADRs, comments). |
+| `build` | Build system, dependencies, Docker, package manifests. |
+| `ci` | CI/CD configuration. |
+| `chore` | Housekeeping that fits nowhere else. |
+| `revert` | Reverting a previous commit. |
+
+**Scopes** (suggested): {{SCOPES}}. Use when a commit clearly belongs to one component; omit when
+cross-cutting.
+
+**Breaking changes:** append `!` after the type/scope and add a `BREAKING CHANGE:` footer.
+
+Why this style: machine-parseable (enables changelogs/semver later), forces a deliberate type up front,
+and is industry-standard so onboarding cost is near zero.
+
+## Branch names
+
+{{BRANCH_CONVENTION}}
+<!-- Solo phase: often not formalized. Team phase: `<type>/<short-slug>`, e.g. feat/decision-evaluator. -->
+
+## File naming
+
+- {{LANGUAGE}}: {{NAMING_RULE}}
+- Markdown: `kebab-case.md` for docs; ADRs use `NNNN-kebab-title.md`.
+
+## Other conventions
+
+<!-- Append here as small cross-cutting rules emerge, so they don't live only in someone's head. -->
+
+- {{CONVENTION}}
