@@ -22,15 +22,15 @@ and resumable across sessions — instead of re-explaining your conventions ever
 In an interactive Claude Code session:
 
 ```
-/plugin marketplace add <OWNER>/claude-skills
+/plugin marketplace add MikhailBukach/claude-skills
 /plugin install project-bootstrap@claude-skills
 ```
 
-Replace `<OWNER>/claude-skills` with this repo's path (e.g. `your-github-user/claude-skills`). You can also
+Replace `MikhailBukach/claude-skills` with this repo's path (e.g. `your-github-user/claude-skills`). You can also
 point at the full git URL:
 
 ```
-/plugin marketplace add https://github.com/<OWNER>/claude-skills.git
+/plugin marketplace add https://github.com/MikhailBukach/claude-skills.git
 ```
 
 After installing, restart Claude Code. The skill triggers on its own when you start, adopt, or resume a
