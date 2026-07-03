@@ -26,8 +26,7 @@ In an interactive Claude Code session:
 /plugin install project-bootstrap@claude-skills
 ```
 
-Replace `MikhailBukach/claude-skills` with this repo's path (e.g. `your-github-user/claude-skills`). You can also
-point at the full git URL:
+Or point at the full git URL:
 
 ```
 /plugin marketplace add https://github.com/MikhailBukach/claude-skills.git
